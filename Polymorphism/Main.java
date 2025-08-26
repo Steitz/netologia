@@ -34,7 +34,7 @@ public class Main {
         int amount;
         int days = Math.abs(scanner.nextInt());
         for (int i = 0; i < companies.length; i++) {
-            System.out.printf("Компания %s (%s):\n", companies[i].title, companies[i].tax.typeTax());
+            System.out.printf("Компания %s (%s):\n", companies[i].title, companies[i].USN.typeTax());
             for (int j = 0; j < days; j++) {
                 amount = random.nextInt(-100, 256);
                 companies[i].shiftMoney(amount);
@@ -50,6 +50,3 @@ public class Main {
     }
 
 }
-
-
-
