@@ -1,7 +1,7 @@
 package taxes;
 
 public class Tax15 extends TaxSystem {
-    public String typeTax = "налог 15% от разницы доходов и расходов";
+    protected String typeTax = "налог 15% от разницы доходов и расходов";
 
     @Override
     public int calcTaxFor(int debit, int credit) {
@@ -14,3 +14,4 @@ public class Tax15 extends TaxSystem {
         return typeTax;
     }
 }
+
