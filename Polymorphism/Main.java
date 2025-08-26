@@ -30,7 +30,6 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        // период, за который рассчитываем налог
         System.out.print("Введите целое число:");
         int amount;
         int days = Math.abs(scanner.nextInt());
