@@ -14,8 +14,11 @@ public class Company {
 
     public void shiftMoney(int amount) {
         if (amount != 0) {
-            if (amount > 0) this.debit += amount;
-            else this.credit += Math.abs(amount);
+            if (amount > 0) {
+                this.debit += amount;
+            } else {
+                this.credit += Math.abs(amount);
+            }
         }
     }
 
@@ -56,4 +59,3 @@ public class Company {
 
     }
 }
-
