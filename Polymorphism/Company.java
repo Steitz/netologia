@@ -27,8 +27,7 @@ public class Company {
     //выведет сообщение на экран вида: Компания <название> уплатила налог в размере: <сумма> руб.;
     //обнулит счётчики debit и credit.
     public void payTaxes(TaxSystem companyTax) {
-        int sumTax = companyTax.calcTaxFor(debit, credit);
-        System.out.printf("Компания %s уплатила налог в размере: %d руб.\n", this.title, sumTax);
+        System.out.printf("Компания %s уплатила налог в размере: %d руб.\n", this.title, companyTax.calcTaxFor(debit, credit));
         credit = 0;
         debit = 0;
 
@@ -57,3 +56,4 @@ public class Company {
 
     }
 }
+
