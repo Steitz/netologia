@@ -1,7 +1,7 @@
 package taxes;
 
 public class TaxSystem {
-    public String typeTax = " ";
+    protected String typeTax = " ";
 
     public int calcTaxFor(int debit, int credit) {
         return 0;
