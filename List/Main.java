@@ -65,19 +65,23 @@ public class Main {
 
     public static void delToNumber(List task) {
         System.out.print("Введите номер для удаления: ");
-        System.out.println("Удалено!");
-        int t = sc.nextInt();
-        task.remove(--t);
-        printTask(task);
-        System.out.println();
+        String t = sc.nextLine();
+        int x = Integer.parseInt(t);
+        if (x >= 0 && x <= task.size()) {
+            System.out.println("Удалено!");
+            task.remove(--x);
+            printTask(task);
+            System.out.println();
+        } else System.out.println("Нет такой задачи\n");
     }
 
     public static void delToString(List task) {
         System.out.print("Введите задачу для удаления: ");
         String str = sc.nextLine();
         if (task.contains(str)) {
-            int t = task.indexOf(str);
-            task.remove(t);
+            //task.remove(task.indexOf(str));
+            task.remove(task.indexOf(str));
+            System.out.println("Удалено!");
             printTask(task);
             System.out.println();
         } else System.out.println("Нет такой задачи\n");
