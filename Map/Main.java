@@ -17,11 +17,10 @@ public class Main {
         while (true) {
             System.out.println("Заполнение нового заказа или end");
             System.out.print("  Введите страну:");
-            String input = scanner.nextLine();
-            if ("end".equals(input)) {
+            String country = scanner.nextLine();
+            if ("end".equals(country)) {
                 break;
             }
-            String country = scanner.nextLine();
 
             System.out.print("  Введите город:");
             String city = scanner.nextLine();
@@ -30,16 +29,16 @@ public class Main {
             System.out.print("  Введите вес (кг):");
             String weight = scanner.nextLine();
 
-
-            if (costPerAddress.get(new Address(country, city)) == null) {
-                System.out.println("Доставки по этому адресу нет");
-            } else {
-                amount = Integer.parseInt(weight) * costPerAddress.get(new Address(country, city));
+            Address addr = new Address(country, city);
+            if (costPerAddress.containsKey(addr)) {
+                amount = Integer.parseInt(weight) * costPerAddress.get(addr);
                 totalAmount += amount;
                 System.out.printf("Стоимость доставки составит: %d руб.\n", amount);
                 System.out.printf("Общая стоимость всех доставок: %d руб.\n", totalAmount);
+            } else {
+                System.out.println("Доставки по этому адресу нет");
             }
-
+            System.out.println();
 
         }
 
